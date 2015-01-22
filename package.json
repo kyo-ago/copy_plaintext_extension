@@ -1,0 +1,30 @@
+{
+  "name": "copy_plaintext",
+  "version": "0.0.1",
+  "author": "@kyo_ago",
+  "browserify": {
+    "transform": [
+      "6to5ify"
+    ]
+  },
+  "devDependencies": {
+    "6to5ify": "^3.1.2",
+    "browserify": "^8.1.1",
+    "fixpack": "^1.2.0",
+    "gulp": "^3.8.10",
+    "gulp-bump": "^0.1.11",
+    "gulp-cli": "^0.1.4",
+    "gulp-zip": "^2.0.2",
+    "object-assign": "^2.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp",
+    "clean": "rm -fr archive.zip dist node_modules",
+    "deploy": "npm run fix && npm run clean && npm run build && gulp bump && gulp zip",
+    "fix": "fixpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
+  }
+}
